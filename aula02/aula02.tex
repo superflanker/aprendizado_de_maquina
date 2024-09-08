@@ -1,0 +1,156 @@
+% The preceding line is only needed to identify funding in the first footn%\documentclass[journal, onecolumn, letterpaper]{IEEEtran}
+%\documentclass[journal,onecolumn]{IEEEtran}
+% \documentclass[conference]{IEEEtran}
+\documentclass[a4paper, 12pt, onecolumn,singlespacing]{article}
+
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage[level]{fmtcount} % equivalent to \usepackage{nth}
+% \include{util}
+\usepackage[portuguese, brazil, english]{babel}
+\usepackage{multirow}
+\usepackage{array} % for defining a new column type
+\usepackage{varwidth} %for the varwidth minipage environment
+\usepackage[super]{nth}
+\usepackage{authblk}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{ulem}
+\usepackage{graphicx}
+% \usepackage{subfig}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{titlesec}
+\usepackage{helvet}
+\usepackage{gensymb}
+\usepackage{setspace} % espacamento entre linhas
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{minted}
+\usepackage[left=2cm, right=2cm, bottom=2cm, top=2cm]{geometry} 
+\usepackage{makecell}
+\usepackage{pdfpages}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{subcaption}
+\usepackage{colortbl}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyhf{} % limpa os cabecalhos e rodapés
+\fancyhead[C]{\textit{INTRODUÇÃO AO APRENDIZADO DE MÁQUINA - EELT7023} } % define o cabeçalho personalizado
+\fancyfoot[C]{\textit{AUGUSTO MATHIAS ADAMS}}
+\pagestyle{fancy} % sem definir esse comando, o cabeçalho personalizado não é exibido
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=blue,
+	pdftitle={INTRODUÇÃO AO APRENDIZADO DE MÁQUINA - EELT7023}
+}
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+%dashed line
+\usepackage{booktabs, makecell}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{}
+\usepackage{arydshln}
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+% padrao 1.5 de espacamento entre linhas
+\setstretch{1.5}
+\makeatletter
+\def\@maketitle{%
+	\newpage
+	\null
+	\vskip 2em%
+	\begin{center}%
+		\let \footnote \thanks
+		{\LARGE \@title \par}%
+		\vskip 1.5em%
+		{\large
+			\lineskip .5em%
+			\begin{tabular}[t]{c}%
+				\@author
+			\end{tabular}\par}%
+		%\vskip 1em%
+		%{\large \@date}%
+	\end{center}%
+	\par
+	\vskip 1.5em}
+\makeatother
+
+\definecolor{LightGray}{gray}{0.9}
+
+\title{\normalsize{INTRODUÇÃO AO APRENDIZADO DE MÁQUINA - EELT7023}\\ \huge{\textbf\textit{{AULA 02: APRENDIZADO DE MÁQUINA, UMA INTRODUÇÃO }}\\}}
+\author{\small{AUGUSTO MATHIAS ADAMS}}
+\setcounter{Maxaffil}{0}
+\renewcommand\Affilfont{\itshape\small}
+
+\begin{document}
+	% Seleciona o idioma do documento
+	\selectlanguage{brazil}
+	
+	% título
+	\maketitle
+	
+	\section{QUESTÃO 1}
+	
+	\subsection{Enunciado}
+	
+		Pense num problema real onde existe a necessidade de desenvolvimento de um algoritmo de Aprendizado de Máquina.
+	
+	\subsection{Resposta}
+	
+	Um problema relevante ligado ao mercado financeiro é a previsão do movimento de preços de ações. Este problema envolve o desenvolvimento de um modelo que possa prever o preço futuro de uma ação com base em dados históricos e outros indicadores financeiros.
+	
+	\textbf{\textit{Problema: }} Prever o movimento (alta, baixa ou estabilidade) dos preços de ações com base em dados históricos, permitindo que investidores identifiquem oportunidades de compra ou venda, visando maximizar lucros ou minimizar perdas.
+	
+	\section{QUESTÃO 2}
+	
+	\subsection{Enunciado}
+	Trata-se de um problema de aprendizado Supervisionado ou Não Supervisionado?
+	
+	\subsection{Resposta}
+	
+	Este é um problema de Aprendizado Supervisionado. Há um histórico de preços de ações disponível, e a tarefa é treinar o modelo para reconhecer padrões nesses dados que possam indicar o comportamento futuro dos preços.
+	
+	\section{QUESTÃO 3}
+	
+	\subsection{Enunciado}
+	Caso seja um problema de aprendizado Supervisionado, trata-se de um problema de Regressão ou Classificação?
+	
+	\subsection{Resposta}
+		Este problema pode ser abordado tanto como um problema de \textit{Regressão} quanto de \textit{Classificação}, dependendo do objetivo:
+		\begin{itemize}
+			\item 	\textbf{\textit{Regressão:}} Se o objetivo for estimar o preço da ação em um momento futuro (ex.: o preço no fechamento do próximo dia), trata-se de um problema de regressão.
+			\item 	\textbf{\textit{Classificação:}} Se o objetivo for prever a direção do movimento do preço (ex.: se o preço irá subir, descer ou permanecer estável), então é um problema de classificação.
+		\end{itemize}
+		
+	\section{QUESTÃO 4}
+	
+	\subsection{Enunciado}
+		Quais serão os dados que você utilizará para alimentar o seu algoritmo?
+	
+	\subsection{Resposta}
+	
+		Os dados utilizados para treinar o modelo podem incluir uma ampla gama de variáveis, tais como:
+		\begin{itemize}
+			\item \textbf{\textit{Preços históricos:}} Preços de abertura, fechamento, máxima, mínimas.
+			\item \textbf{\textit{Indicadores técnicos:}} Médias móveis (simples e exponenciais), Índice de Força Relativa (RSI), Média Móvel Convergente/Divergente (MACD), Bandas de Bollinger, entre outros.
+			
+		\end{itemize}
+	
+	Para fins de estudo e demonstração, utilizaremos os dados financeiros do Yahoo Finance para a ação \textit{\textbf{PETR4.SA}}, utilizando o indicador \textbf{\textit{OHLC4}} e o Modelo \textit{\textbf{SGD}} conforme indicado no \href{file://Codigo_Problema_02_aula_02.ipynb}{Notebook}.
+	
+		
+\end{document}
