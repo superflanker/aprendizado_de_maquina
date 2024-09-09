@@ -113,7 +113,7 @@
 	
 	Um problema relevante ligado ao mercado financeiro é a previsão do movimento de preços de ações. Este problema envolve o desenvolvimento de um modelo que possa prever o preço futuro de uma ação com base em dados históricos e outros indicadores financeiros.
 	
-	\textbf{\textit{Problema: }} Prever o movimento (alta, baixa ou estabilidade) dos preços de ações com base em dados históricos, permitindo que investidores identifiquem oportunidades de compra ou venda, visando maximizar lucros ou minimizar perdas.
+	\textbf{\textit{Problema: }} Estimar as variações nos preços das ações com base em dados históricos, proporcionando aos investidores uma ferramenta para identificar oportunidades de compra ou venda, com o objetivo de maximizar lucros ou reduzir perdas.
 	
 	\section{QUESTÃO 2}
 	
@@ -122,7 +122,7 @@
 	
 	\subsection{Resposta}
 	
-	Este é um problema de Aprendizado Supervisionado. Há um histórico de preços de ações disponível, e a tarefa é treinar o modelo para reconhecer padrões nesses dados que possam indicar o comportamento futuro dos preços.
+	Esse problema se enquadra na categoria de Aprendizado Supervisionado. Com um histórico de preços de ações à disposição, a tarefa consiste em treinar um modelo para identificar padrões nesses dados, que possam ser indicativos do comportamento futuro dos preços.
 	
 	\section{QUESTÃO 3}
 	
@@ -130,12 +130,12 @@
 	Caso seja um problema de aprendizado Supervisionado, trata-se de um problema de Regressão ou Classificação?
 	
 	\subsection{Resposta}
-		Este problema pode ser abordado tanto como um problema de \textit{Regressão} quanto de \textit{Classificação}, dependendo do objetivo:
+		Esse problema pode ser abordado como um problema de \textit{Regressão} ou de \textit{Classificação}, dependendo do objetivo a ser alcançado:
 		\begin{itemize}
-			\item 	\textbf{\textit{Regressão:}} Se o objetivo for estimar o preço da ação em um momento futuro (ex.: o preço no fechamento do próximo dia), trata-se de um problema de regressão.
-			\item 	\textbf{\textit{Classificação:}} Se o objetivo for prever a direção do movimento do preço (ex.: se o preço irá subir, descer ou permanecer estável), então é um problema de classificação.
+			\item 	\textbf{\textit{Regressão:}} Quando o objetivo é estimar o valor exato do preço da ação em um momento futuro, como o preço de fechamento do próximo dia, o problema é de regressão.
+			\item 	\textbf{\textit{Classificação:}}Quando o objetivo é prever a direção do movimento do preço, ou seja, se o preço irá subir, descer ou permanecer estável, o problema se configura como de classificação.
 		\end{itemize}
-		
+		Para uma primeira tentativa, a abordagem será de regressão, por questões de simplicidade.
 	\section{QUESTÃO 4}
 	
 	\subsection{Enunciado}
@@ -143,14 +143,14 @@
 	
 	\subsection{Resposta}
 	
-		Os dados utilizados para treinar o modelo podem incluir uma ampla gama de variáveis, tais como:
-		\begin{itemize}
-			\item \textbf{\textit{Preços históricos:}} Preços de abertura, fechamento, máxima, mínimas.
-			\item \textbf{\textit{Indicadores técnicos:}} Médias móveis (simples e exponenciais), Índice de Força Relativa (RSI), Média Móvel Convergente/Divergente (MACD), Bandas de Bollinger, entre outros.
-			
-		\end{itemize}
+	Os dados utilizados para treinar o modelo podem incluir uma ampla gama de variáveis, tais como:
+	\begin{itemize}
+		\item \textbf{\textit{Preços históricos:}} Preços de abertura, fechamento, máxima, mínimas.
+		\item \textbf{\textit{Indicadores técnicos:}} Médias móveis (simples e exponenciais), Índice de Força Relativa (RSI), Média Móvel Convergente/Divergente (MACD), Bandas de Bollinger, entre outros.
+		
+	\end{itemize}
 	
-	Para fins de estudo e demonstração, utilizaremos os dados financeiros do Yahoo Finance para a ação \textit{\textbf{PETR4.SA}}, utilizando o indicador \textbf{\textit{OHLC4}} e o Modelo \textit{\textbf{SGD}} conforme indicado no \href{file://Codigo_Problema_02_aula_02.ipynb}{Notebook}.
+	Para fins de estudo e demonstração, utilizaremos os dados financeiros do Yahoo Finance para a ação \textit{\textbf{PETR4.SA}}, utilizando o indicador \textbf{\textit{OHLC4}}, bem como sua média móvel (\textbf{\textit{SMA}}) e o Modelo \textit{\textbf{SGD}} para regressão dos dados conforme indicado no \href{file://Codigo_Problema_02_aula_02.ipynb}{Jupyter Notebook}.
 	
 		
 \end{document}
